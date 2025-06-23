@@ -1,0 +1,11 @@
+workflows:
+  ios-workflow:
+    name: Build iOS .ipa
+    environment:
+      xcode: latest
+    scripts:
+      - name: Build iOS
+        script: |
+          echo "This is a placeholder script"
+    artifacts:
+      - build/ios/ipa/*.ipa
