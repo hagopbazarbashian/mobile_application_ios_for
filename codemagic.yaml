@@ -4,8 +4,17 @@ workflows:
     environment:
       xcode: latest
     scripts:
-      - name: Build iOS
+      - name: Install dependencies
         script: |
-          echo "This is a placeholder script"
+          npm install
+      - name: Install CocoaPods
+        script: |
+          cd ios
+          pod install
+      - name: Build iOS app
+        script: |
+          cd ..
+          npx react-native bundle --platform ios --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios
+          xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos -derivedDataPath ios/build
     artifacts:
-      - build/ios/ipa/*.ipa
+      - ios/build/Build/Products/Release-iphoneos/*.ipa
