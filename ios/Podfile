@@ -13,7 +13,5 @@ target 'itfllcmobileapp' do
 
   target 'itfllcmobileappTests' do
     inherit! :complete
-    # Pods for testing
   end
-
 end
