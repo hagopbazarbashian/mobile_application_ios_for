@@ -3,6 +3,9 @@ workflows:
     name: Cordova iOS Build
     environment:
       xcode: latest
+      vars:
+        DEVELOPMENT_TEAM: $DEVELOPMENT_TEAM
+        CODE_SIGN_IDENTITY: iPhone Developer
     scripts:
       - name: Install Cordova
         script: |
