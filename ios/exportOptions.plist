@@ -4,13 +4,20 @@
 <dict>
   <key>method</key>
   <string>ad-hoc</string>
+
   <key>signingStyle</key>
   <string>automatic</string>
+
   <key>stripSwiftSymbols</key>
   <true/>
+
   <key>compileBitcode</key>
   <false/>
+
   <key>destination</key>
   <string>export</string>
+
+  <key>thinning</key>
+  <string>&lt;none&gt;</string>
 </dict>
 </plist>
