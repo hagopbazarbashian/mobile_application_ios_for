@@ -3,8 +3,6 @@ workflows:
     name: Cordova iOS Build
     environment:
       xcode: latest
-      vars:
-        CORDOVA_PLATFORM: ios
     scripts:
       - name: Install Cordova
         script: |
@@ -14,8 +12,9 @@ workflows:
           npm install
       - name: Add iOS platform and build
         script: |
+          cordova telemetry off
           cordova platform rm ios || true
-          cordova platform add $CORDOVA_PLATFORM
-          cordova build ios --release --device
+          cordova platform add ios
+          cordova build ios --release --device --verbose
     artifacts:
       - platforms/ios/build/device/*.ipa
