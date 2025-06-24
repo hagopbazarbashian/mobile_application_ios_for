@@ -7,11 +7,12 @@ workflows:
       - name: Install Cordova
         script: |
           npm install -g cordova
-      - name: Install dependencies
+      - name: Install Dependencies
         script: |
           npm install
       - name: Add iOS platform and build
         script: |
+          cordova telemetry off
           cordova platform rm ios || true
           cordova platform add ios
           cordova build ios --release --device
