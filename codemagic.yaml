@@ -1,20 +1,18 @@
 workflows:
-  ios-workflow:
-    name: Build iOS .ipa
+  cordova-ios:
+    name: Cordova iOS Build
     environment:
       xcode: latest
     scripts:
-      - name: Install dependencies
+      - name: Install Cordova
+        script: |
+          npm install -g cordova
+      - name: Install Dependencies
         script: |
           npm install
-      - name: Install CocoaPods
-        script: |
-          cd ios
-          pod install
       - name: Build iOS app
         script: |
-          cd ..
-          npx react-native bundle --platform ios --entry-file index.js --bundle-output ios/main.jsbundle --assets-dest ios
-          xcodebuild -workspace ios/YourApp.xcworkspace -scheme YourApp -configuration Release -sdk iphoneos -derivedDataPath ios/build
+          cordova platform add ios
+          cordova build ios --release --device
     artifacts:
-      - ios/build/Build/Products/Release-iphoneos/*.ipa
+      - platforms/ios/build/device/*.ipa
