@@ -12,10 +12,10 @@ workflows:
       - name: Install Dependencies
         script: |
           npm install
-      - name: Add iOS platform and build
+      - name: Clean and Add iOS platform and build
         script: |
           cordova telemetry off
-          cordova platform rm ios || true
+          rm -rf platforms/ plugins/  # 🔥 Important: clean everything to avoid duplicate plugin errors
           cordova platform add ios
           cordova build ios --release --device
     artifacts:
