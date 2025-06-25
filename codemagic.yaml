@@ -14,8 +14,9 @@ workflows:
           npm install
       - name: Clean and Add iOS platform and build
         script: |
+          # Clean folders to avoid duplicate plugin errors
+          rm -rf platforms/ plugins/
           cordova telemetry off
-          rm -rf platforms/ plugins/  # 🔥 Important: clean everything to avoid duplicate plugin errors
           cordova platform add ios
           cordova build ios --release --device
     artifacts:
