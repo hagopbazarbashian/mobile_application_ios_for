@@ -5,6 +5,10 @@ workflows:
       xcode: latest
       groups:
         - ios-signing
+      vars:  
+        XCODE_WORKSPACE: "ITF UTILITY.xcworkspace"
+        XCODE_SCHEME: "ITF UTILITY"
+        XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
     scripts:
       - name: Install Cordova
         script: |
@@ -18,6 +22,8 @@ workflows:
           rm -rf platforms/ plugins/
           cordova telemetry off
           cordova platform add ios
-          cordova build ios --release --device
+          cordova build ios --release --device \
+           --buildFlag="-allowProvisioningUpdates" \
+           --buildFlag="-UseModernBuildSystem=0"
     artifacts:
       - platforms/ios/build/device/*.ipa
