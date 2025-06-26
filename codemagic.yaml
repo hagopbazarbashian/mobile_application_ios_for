@@ -4,11 +4,14 @@ workflows:
     environment:
       xcode: latest
       groups:
-        - ios-signing
-      vars:  
+        - ios-signing  # make sure this group has the files
+      vars:
         XCODE_WORKSPACE: "ITF UTILITY.xcworkspace"
         XCODE_SCHEME: "ITF UTILITY"
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
+        DEVELOPMENT_TEAM: M5BW9K22PK  # your Apple team ID
+        PROVISIONING_PROFILE: itf_distribution_profile
+        CERTIFICATE: itf_distribution_cert
     scripts:
       - name: Install Cordova
         script: |
@@ -18,7 +21,6 @@ workflows:
           npm install
       - name: Clean and Add iOS platform and build
         script: |
-          # Clean folders to avoid duplicate plugin errors
           rm -rf platforms/ plugins/
           cordova telemetry off
           cordova platform add ios
