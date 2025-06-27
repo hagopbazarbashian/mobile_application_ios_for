@@ -4,14 +4,15 @@ workflows:
     environment:
       xcode: latest
       groups:
-        - ios-signing  # contains uploaded .p12 and .mobileprovision files
+        - ios-signing
       vars:
         XCODE_WORKSPACE: "ITF UTILITY.xcworkspace"
         XCODE_SCHEME: "ITF UTILITY"
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
         DEVELOPMENT_TEAM: M5BW9K22PK
-        PROVISIONING_PROFILE: itf_distribution_profile
-        CERTIFICATE: itf_distribution_cert
+    files:
+      - provisioning_profile: itf_distribution_profile
+      - certificate: itf_distribution_cert
     scripts:
       - name: Install Cordova
         script: |
@@ -24,8 +25,8 @@ workflows:
       - name: Set up provisioning profile
         script: |
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          uuid=$(grep -a -E -o "[-A-F0-9]{36}" $PROVISIONING_PROFILE | head -1)
-          cp $PROVISIONING_PROFILE ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+          uuid=$(grep -a -E -o "[-A-F0-9]{36}" $provisioning_profile | head -1)
+          cp $provisioning_profile ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
       - name: Clean and Add iOS platform and build
         script: |
