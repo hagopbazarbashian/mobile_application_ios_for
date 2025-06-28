@@ -4,12 +4,29 @@
 <dict>
     <key>method</key>
     <string>app-store</string>
+
     <key>teamID</key>
     <string>M5BW9K22PK</string>
+
     <key>provisioningProfiles</key>
     <dict>
         <key>com.itfllc.utilityapp</key>
         <string>itf_distribution_profile</string>
     </dict>
+
+    <key>compileBitcode</key>
+    <true/>
+
+    <key>destination</key>
+    <string>export</string>
+
+    <key>stripSwiftSymbols</key>
+    <true/>
+
+    <key>signingStyle</key>
+    <string>manual</string>
+
+    <key>signingCertificate</key>
+    <string>Apple Distribution</string>
 </dict>
 </plist>
