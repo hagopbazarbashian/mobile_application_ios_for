@@ -32,7 +32,7 @@ workflows:
             --buildFlag="-allowProvisioningUpdates" \
             --buildFlag="-UseModernBuildSystem=0" \
             --buildFlag="-allowProvisioningDeviceRegistration" \
-            --provisioningProfile="itf_distribution_profile" \
+            --buildFlag="-exportOptionsPlist=exportOptions.plist" \
             --developmentTeam=$DEVELOPMENT_TEAM
 
     artifacts:
