@@ -4,7 +4,7 @@ workflows:
     environment:
       xcode: latest
       groups:
-        - ios-signing  # this includes your uploaded .p12 and .mobileprovision files
+        - ios-signing
       vars:
         XCODE_WORKSPACE: "ITF UTILITY.xcworkspace"
         XCODE_SCHEME: "ITF UTILITY"
@@ -22,8 +22,8 @@ workflows:
       - name: Set up provisioning profile
         script: |
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          uuid=$(grep -a -E -o "[-A-F0-9]{36}" itf_distribution_profile | head -1)
-          cp itf_distribution_profile ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+          uuid=$(grep -a -E -o "[-A-F0-9]{36}" $CM_PROVISIONING_PROFILE | head -1)
+          cp $CM_PROVISIONING_PROFILE ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
 
       - name: Clean and Add iOS platform and build
         script: |
