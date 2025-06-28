@@ -19,11 +19,9 @@ workflows:
         script: |
           npm install
 
-      - name: Set up provisioning profile
+      - name: Install provisioning profiles
         script: |
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          uuid=$(grep -a -E -o "[-A-F0-9]{36}" $CM_PROVISIONING_PROFILE | head -1)
-          cp $CM_PROVISIONING_PROFILE ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+          echo "Provisioning profile installed automatically by Codemagic."
 
       - name: Clean and Add iOS platform and build
         script: |
