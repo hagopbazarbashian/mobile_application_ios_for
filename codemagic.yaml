@@ -32,6 +32,7 @@ workflows:
             --buildFlag="-allowProvisioningUpdates" \
             --buildFlag="-UseModernBuildSystem=0" \
             --buildFlag="-allowProvisioningDeviceRegistration" \
+            --provisioningProfile="itf_distribution_profile" \
             --developmentTeam=$DEVELOPMENT_TEAM
 
     artifacts:
