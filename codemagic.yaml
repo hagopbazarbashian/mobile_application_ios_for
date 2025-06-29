@@ -4,12 +4,18 @@ workflows:
     environment:
       xcode: latest
       groups:
-        - ios-signing
+        - ios-signing  # make sure your .p12 and .mobileprovision are in this group
       vars:
         XCODE_WORKSPACE: "ITF UTILITY.xcworkspace"
         XCODE_SCHEME: "ITF UTILITY"
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
         DEVELOPMENT_TEAM: M5BW9K22PK
+      code_signing:
+        certificates:
+          - itf_distribution_cert          # must match certificate name in Codemagic
+        provisioning_profiles:
+          - itf_distribution_profile       # must match profile name in Codemagic
+
     scripts:
       - name: Install Cordova
         script: |
