@@ -19,10 +19,6 @@ workflows:
         script: |
           npm install
 
-      - name: Install provisioning profiles
-        script: |
-          echo "Provisioning profile installed automatically by Codemagic."
-
       - name: Clean and Add iOS platform and build
         script: |
           rm -rf platforms/ plugins/
