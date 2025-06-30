@@ -11,11 +11,15 @@ workflows:
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
         DEVELOPMENT_TEAM: M5BW9K22PK
 
-    signing:
-      certificates:
-        - name: itf_distribution_cert
-      provisioning_profiles:
-        - name: itf_distribution_profile
+    publishing:
+      app_store_connect:
+        credentials: ios-signing
+        submit_to_testflight: false
+        release_type: manual
+        distribution_certificates:
+          - name: itf_distribution_cert
+        provisioning_profiles:
+          - name: itf_distribution_profile
 
     scripts:
       - name: Install Cordova
