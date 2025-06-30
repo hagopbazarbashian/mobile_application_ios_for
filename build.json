@@ -1,8 +1,8 @@
 {
   "ios": {
     "release": {
-      "codeSignIdentity": "iPhone Distribution",
-      "provisioningProfile": "itf_distribution_profile", 
+      "codeSignIdentity": "Apple Distribution",
+      "provisioningProfile": "itf_distribution_profile",
       "developmentTeam": "M5BW9K22PK",
       "packageType": "app-store"
     }

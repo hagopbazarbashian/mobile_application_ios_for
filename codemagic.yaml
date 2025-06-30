@@ -25,7 +25,7 @@ workflows:
           rm -rf platforms/ plugins/
           cordova telemetry off
           cordova platform add ios
-          cordova build ios --release --device \
+          cordova build ios --release --device --buildConfig=build.json \
             --buildFlag="-allowProvisioningUpdates" \
             --buildFlag="-UseModernBuildSystem=0" \
             --buildFlag="-allowProvisioningDeviceRegistration" \
