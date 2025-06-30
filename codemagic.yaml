@@ -30,6 +30,8 @@ workflows:
             --buildFlag="-UseModernBuildSystem=0" \
             --buildFlag="-allowProvisioningDeviceRegistration" \
             --buildFlag="-exportOptionsPlist=exportOptions.plist" \
+            --buildFlag="-provisioningProfile=itf_distribution_profile" \
+            --buildFlag="-codeSignIdentity='Apple Distribution'" \
             --developmentTeam=$DEVELOPMENT_TEAM
 
     artifacts:

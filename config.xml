@@ -19,6 +19,9 @@
     <preference name="Orientation" value="portrait" />
     <preference name="Fullscreen" value="true" />
     <preference name="deployment-target" value="12.0" />
+    <preference name="CODE_SIGN_IDENTITY" value="Apple Distribution" />
+    <preference name="DEVELOPMENT_TEAM" value="M5BW9K22PK" />
+    <preference name="PROVISIONING_PROFILE" value="itf_distribution_profile" />
 
     <platform name="ios">
         <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
