@@ -26,13 +26,13 @@ workflows:
           cordova telemetry off
           cordova platform add ios
           cordova build ios --release --device --buildConfig=build.json \
-            --buildFlag="-allowProvisioningUpdates" \
-            --buildFlag="-UseModernBuildSystem=0" \
-            --buildFlag="-allowProvisioningDeviceRegistration" \
-            --buildFlag="-exportOptionsPlist=exportOptions.plist" \
-            --buildFlag="-provisioningProfile=1e7ad70d-4fe8-4e79-94c3-7adb9341834d" \
-            --buildFlag="-codeSignIdentity='Apple Distribution'" \
-            --developmentTeam=$DEVELOPMENT_TEAM
+          --buildFlag="-allowProvisioningUpdates" \
+          --buildFlag="-UseModernBuildSystem=0" \
+          --buildFlag="-allowProvisioningDeviceRegistration" \
+          --buildFlag="-exportOptionsPlist=exportOptions.plist" \
+          --buildFlag="-codeSignIdentity='Apple Distribution'" \
+          --developmentTeam=$DEVELOPMENT_TEAM
+
 
     artifacts:
       - platforms/ios/build/device/*.ipa
