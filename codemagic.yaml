@@ -10,12 +10,11 @@ workflows:
         XCODE_SCHEME: "ITF UTILITY"
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
         DEVELOPMENT_TEAM: M5BW9K22PK
-
-    signing:
-      certificates:
-        - name: itf_distribution_cert
-      provisioning_profiles:
-        - name: itf_distribution_profile
+      signing:  # ✅ CORRECT location
+        certificates:
+          - name: itf_distribution_cert
+        provisioning_profiles:
+          - name: itf_distribution_profile
 
     scripts:
       - name: Install Cordova
