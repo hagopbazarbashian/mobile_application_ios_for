@@ -11,14 +11,6 @@ workflows:
         XCODE_PROJECT: "platforms/ios/ITF UTILITY.xcodeproj"
         DEVELOPMENT_TEAM: M5BW9K22PK
 
-    automatic_code_signing:
-      use_automatic_signing: false
-      team_id: M5BW9K22PK
-      certificate_ids:
-        - itf_distribution_cert
-      provisioning_profile_ids:
-        - itf_distribution_profile
-
     scripts:
       - name: Install Cordova
         script: |
