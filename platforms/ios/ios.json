@@ -39,16 +39,16 @@
   },
   "installed_plugins": {
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.example.laravel"
+      "PACKAGE_NAME": "com.itfllc.utilityapp"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.example.laravel"
+      "PACKAGE_NAME": "com.itfllc.utilityapp"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.example.laravel"
+      "PACKAGE_NAME": "com.itfllc.utilityapp"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.example.laravel"
+      "PACKAGE_NAME": "com.itfllc.utilityapp"
     }
   },
   "dependent_plugins": {},
